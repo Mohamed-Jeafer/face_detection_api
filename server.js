@@ -14,7 +14,7 @@ const { PORT, DATABASE_URL } = process.env
 const db = knex({
     client: 'pg',
     connection: {
-        host: DATABASE_URL,
+        connectionString: DATABASE_URL,
         ssl: {
             rejectUnauthorized: false
         }
