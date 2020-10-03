@@ -10,14 +10,14 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const { PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env
+const { PORT, DATABASE_URL } = process.env
 const db = knex({
     client: 'pg',
     connection: {
-        host: DB_HOST,
-        user: DB_USER,
-        password: DB_PASSWORD,
-        database: DB_NAME
+        host: DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
     }
 });
 
