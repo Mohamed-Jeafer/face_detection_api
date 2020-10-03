@@ -1,5 +1,5 @@
 
-const registerHandler = (req, res, db, bcrypt) => {
+const handleRegister = (req, res, db, bcrypt) => {
     const { email, name, password } = req.body;
     if (!name || !name || !password) {
         return res.status(400).json('Incorrect form submition')
@@ -37,5 +37,5 @@ const registerHandler = (req, res, db, bcrypt) => {
 };
 
 module.exports = {
-    registerHandler: registerHandler
+    handleRegister: handleRegister
 };
